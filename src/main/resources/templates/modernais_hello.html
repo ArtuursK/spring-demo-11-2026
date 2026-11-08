@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sveiki!</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <div class="background">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+
+        <div class="container">
+
+            <div class="card">
+
+                <div class="icon">✦</div>
+
+                <div class="result" th:if="${result != null}">
+                    <div class="result-icon">✓</div>
+                    <h2 th:text="${result}"></h2>
+                </div>
+
+                <p class="subtitle">
+                    Lūdzu ievadi savu vārdu.
+                </p>
+
+                <form th:action="@{/hello}" method="post">
+
+                    <label for="name">Tavs vārds</label>
+
+                    <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Ievadi savu vārdu..."
+                            required
+                    >
+
+                    <button type="submit">
+                        Nosūtīt
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

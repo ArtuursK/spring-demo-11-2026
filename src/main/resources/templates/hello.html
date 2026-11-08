@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sveiki</title>
+</head>
+<body>
+    <h2>Ievadi vārdu</h2>
+
+    <form th:action="@{/hello}" method="post">
+        <input type="text" name="name" placeholder="Ievadi savu vārdu" required>
+        <button type="submit">Nosūtīt</button>
+    </form>
+
+    <!-- Parādīt atbildi no servera -->
+    <div th:if="${result != null}">
+        <h3 th:text="${result}"></h3>
+    </div>
+
+</body>
+</html>
