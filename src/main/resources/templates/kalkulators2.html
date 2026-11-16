@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modernais kalkulators!</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <div class="background">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+
+        <div class="container">
+
+            <div class="card">
+
+                <div class="icon">✦</div>
+
+                <div class="result" th:if="${result != null}">
+                    <div class="result-icon">✓</div>
+                    <h2 th:text="${result}"></h2>
+                </div>
+
+                <p class="subtitle">
+                    Lūdzu ievadi savu vārdu.
+                </p>
+
+                <form th:action="@{/kalkulators}" method="post">
+
+                    <label for="pirmaisSkaitlis">Ievadi pirmo skaitli</label>
+                    <input id="pirmaisSkaitlis" type="number" name="pirmaisSkaitlis">
+                    <select id="darbiba" name="darbiba">
+                        <option value="/">/</option>
+                        <option value="*">*</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                    </select>
+                    <label for="otraisSkaitlis">Ievadi otro skaitli</label>
+                    <input id="otraisSkaitlis" type="number" name="otraisSkaitlis">
+
+                    <button type="submit">
+                        Nosūtīt
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
